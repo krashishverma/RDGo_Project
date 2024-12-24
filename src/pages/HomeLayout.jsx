@@ -33,6 +33,8 @@ import {
   BackButton,
 } from "../assets/Wrappers/HomeLayout";
 import Profile from '../Components/Profile'
+import Help from '../Components/Help'
+import Payments from "../Components/Payments";
 const HomePage = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSidebar, setActiveSidebar] = useState(null);
@@ -185,8 +187,8 @@ const HomePage = () => {
           </BackButton>
           <div>
             {activeSidebar === "profile" && <Profile />}
-            {activeSidebar === "help" && <p>Help content here</p>}
-            {activeSidebar === "payment" && <p>Payment content here</p>}
+            {activeSidebar === "help" && <Help />}
+            {activeSidebar === "payment" && <Payments />}
             {activeSidebar === "myRides" && <p>My Rides content here</p>}
             {activeSidebar === "safety" && <p>Safety content here</p>}
             {activeSidebar === "referEarn" && <p>Refer and Earn content here</p>}

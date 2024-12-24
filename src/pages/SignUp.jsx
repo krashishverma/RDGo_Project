@@ -26,9 +26,9 @@ function SignUp() {
   const navigate = useNavigate(); // Use useNavigate hook
 
   useEffect(() => {
-    // Check if the user is already verified and redirect
+    // Check if the user is already verified from sessionStorage
     const isVerified = sessionStorage.getItem("isVerified");
-    if (isVerified) {
+    if (isVerified === "true") {
       navigate("/home"); // Redirect to home if already verified
     }
   }, [navigate]);
@@ -93,13 +93,13 @@ function SignUp() {
           country: formData.country,
         }),
       });
-  
+
       const result = await response.json();
       if (result.message === "Phone number verified and user registered successfully.") {
         Cookies.set("phone", formData.phone, { expires: 7 }); // Save phone in cookies for 7 days
         alert("Phone number verified successfully!");
-        sessionStorage.setItem("isVerified", "true");
-        navigate("/home");
+        sessionStorage.setItem("isVerified", "true"); // Mark user as verified
+        navigate("/home"); // Redirect to home after successful verification
       } else {
         alert(result.message || "Invalid OTP.");
       }
@@ -109,6 +109,7 @@ function SignUp() {
     }
   };
 
+  // Handle form submit (send OTP or verify OTP)
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!otpSent) {
@@ -116,6 +117,12 @@ function SignUp() {
     } else {
       verifyOtp(); // Verify OTP if sent
     }
+  };
+
+  // Handle Resend OTP request
+  const handleResendOtp = (e) => {
+    e.preventDefault();
+    sendOtp(); // Resend OTP without verifying
   };
 
   return (
@@ -176,7 +183,7 @@ function SignUp() {
                 />
               </InputGroup>
               <Button type="submit">Verify OTP</Button>
-              <Button type="button" onClick={sendOtp}>
+              <Button type="button" onClick={handleResendOtp}>
                 Resend OTP
               </Button>
             </>

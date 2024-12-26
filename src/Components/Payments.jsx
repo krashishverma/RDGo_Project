@@ -210,7 +210,7 @@ const Payments = () => {
         <h2>Wallets</h2>
         <Card>
           <div>
-            <img src="wallet-icon.png" alt="Wallet" />
+            {/* <img src="wallet-icon.png" alt="Wallet" /> */}
             <div>
               <h4>Rapido Wallet</h4>
               <p style={{ color: "red" }}>Low Balance: ₹0.0</p>
@@ -221,13 +221,15 @@ const Payments = () => {
 
         <Card>
           <div>
-            <img src="amazon-icon.png" alt="AmazonPay" />
-            <div>
+            <img src="src/assets/images/amazonPay.png" alt="AmazonPay" />
+            
               <h4>AmazonPay</h4>
+              </ div>
+              <div>
               <p>
                 Cashback behind scratch card upto ₹25, assured ₹5 | min order ₹39
               </p>
-            </div>
+            
           </div>
           <button>LINK</button>
         </Card>
@@ -237,7 +239,8 @@ const Payments = () => {
 
       {/* Pay By UPI */}
       <UpiSection>
-        <h2>Pay by any UPI app</h2>
+        <img src="src/assets/images/upi_icon.png" alt="upi" />
+        <h3>Pay by any UPI app</h3>
         <UpiApp>GPay</UpiApp>
         <UpiApp>PhonePe</UpiApp>
         <UpiApp>Paytm</UpiApp>
@@ -256,12 +259,7 @@ const Payments = () => {
             <p>Go cashless, after ride pay by scanning QR code</p>
           </div>
         </Card>
-        <Card>
-          <div>
-            <h4>Simpl</h4>
-          </div>
-          <button>LINK</button>
-        </Card>
+       
       </Section>
 
       <Divider />

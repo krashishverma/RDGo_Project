@@ -35,6 +35,9 @@ import {
 import Profile from '../Components/Profile'
 import Help from '../Components/Help'
 import Payments from "../Components/Payments";
+import Safety from "../Components/Safety";
+import Settings from "../Components/Settings";
+import MyRewards from "../Components/MyRewards";
 const HomePage = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSidebar, setActiveSidebar] = useState(null);
@@ -190,11 +193,11 @@ const HomePage = () => {
             {activeSidebar === "help" && <Help />}
             {activeSidebar === "payment" && <Payments />}
             {activeSidebar === "myRides" && <p>My Rides content here</p>}
-            {activeSidebar === "safety" && <p>Safety content here</p>}
+            {activeSidebar === "safety" && <Safety />}
             {activeSidebar === "referEarn" && <p>Refer and Earn content here</p>}
-            {activeSidebar === "myRewards" && <p>My Rewards content here</p>}
+            {activeSidebar === "myRewards" && < MyRewards/>}
             {activeSidebar === "notifications" && <p>Notifications content here</p>}
-            {activeSidebar === "settings" && <p>Settings content here</p>}
+            {activeSidebar === "settings" && <Settings/>}
           </div>
         </SidebarContent>
       )}

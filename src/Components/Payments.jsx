@@ -1,10 +1,7 @@
-// Payments.js
-
 import React from "react";
 import styled from "styled-components";
 
 // Styled Components for Responsive Design
-
 const Container = styled.div`
   padding: 20px;
   font-family: Arial, sans-serif;
@@ -57,7 +54,6 @@ const Section = styled.div`
 
 const Card = styled.div`
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   background: #fff;
@@ -77,6 +73,7 @@ const Card = styled.div`
 
   img {
     width: 40px;
+    height: auto;
     margin-right: 10px;
 
     @media (max-width: 768px) {
@@ -100,33 +97,6 @@ const Card = styled.div`
 
     @media (max-width: 480px) {
       padding: 8px 15px;
-    }
-  }
-
-  h4 {
-    color: #555;
-    font-size: 1.1rem;
-
-    @media (max-width: 768px) {
-      font-size: 1rem;
-    }
-
-    @media (max-width: 480px) {
-      font-size: 0.9rem;
-    }
-  }
-
-  p {
-    color: #777;
-    margin-top: 5px;
-    font-size: 0.9rem;
-
-    @media (max-width: 768px) {
-      font-size: 0.85rem;
-    }
-
-    @media (max-width: 480px) {
-      font-size: 0.8rem;
     }
   }
 `;
@@ -154,52 +124,17 @@ const UpiApp = styled.div`
     transform: scale(1.1);
   }
 
-  @media (max-width: 768px) {
-    padding: 8px 15px;
-  }
-
-  @media (max-width: 480px) {
-    padding: 6px 12px;
-  }
-`;
-
-const OthersSection = styled.div`
-  div {
-    background: #fff;
-    padding: 15px;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
-    width: 100%;
-    max-width: 600px;
-    margin: 10px auto;
-
-    &:hover {
-      box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
-      transform: translateY(-5px);
-    }
-
-    h4 {
-      color: #555;
-    }
-
-    p {
-      color: #777;
-      margin-top: 5px;
-    }
+  img {
+    width: 40px;
+    margin: auto;
+    display: block;
 
     @media (max-width: 768px) {
-      padding: 12px;
-    }
-
-    @media (max-width: 480px) {
-      padding: 10px;
+      width: 30px;
     }
   }
 `;
 
-// Payments Component
 const Payments = () => {
   return (
     <Container>
@@ -209,8 +144,11 @@ const Payments = () => {
       <Section>
         <h2>Wallets</h2>
         <Card>
-          <div>
-            {/* <img src="wallet-icon.png" alt="Wallet" /> */}
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <img
+              src="https://upload.wikimedia.org/wikipedia/en/5/54/Rapido_app_logo.png"
+              alt="Rapido Wallet"
+            />
             <div>
               <h4>Rapido Wallet</h4>
               <p style={{ color: "red" }}>Low Balance: ₹0.0</p>
@@ -220,18 +158,20 @@ const Payments = () => {
         </Card>
 
         <Card>
-          <div>
-            <img src="src/assets/images/amazonPay.png" alt="AmazonPay" />
-            
-              <h4>AmazonPay</h4>
-              </ div>
-              <div>
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/d/d1/Amazon_Pay_logo.png"
+              alt="Amazon Pay"
+            />
+            <div>
+              <h4>Amazon Pay</h4>
               <p>
-                Cashback behind scratch card upto ₹25, assured ₹5 | min order ₹39
+                Cashback behind scratch card up to ₹25, assured ₹5 | min order
+                ₹39
               </p>
-            
+            </div>
           </div>
-          <button>LINK</button>
+          <button>Link</button>
         </Card>
       </Section>
 
@@ -239,42 +179,38 @@ const Payments = () => {
 
       {/* Pay By UPI */}
       <UpiSection>
-        <img src="src/assets/images/upi_icon.png" alt="upi" />
-        <h3>Pay by any UPI app</h3>
-        <UpiApp>GPay</UpiApp>
-        <UpiApp>PhonePe</UpiApp>
-        <UpiApp>Paytm</UpiApp>
-        <UpiApp>Amazon</UpiApp>
-        <UpiApp>Flipkart</UpiApp>
+        <h2>Pay by any UPI app</h2>
+        <UpiApp>
+          <img
+            src="https://pay.google.com/about/static_kcs/images/logos/google-pay-logo.svg"
+            alt="GPay"
+          />
+        </UpiApp>
+        <UpiApp>
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/7/71/PhonePe_Logo.svg"
+            alt="PhonePe"
+          />
+        </UpiApp>
+        <UpiApp>
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Paytm_logo.png"
+            alt="Paytm"
+          />
+        </UpiApp>
+        <UpiApp>
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg"
+            alt="Amazon"
+          />
+        </UpiApp>
+        <UpiApp>
+          <img
+            src="https://upload.wikimedia.org/wikipedia/en/0/0c/Flipkart_logo.png"
+            alt="Flipkart"
+          />
+        </UpiApp>
       </UpiSection>
-
-      <Divider />
-
-      {/* Pay Later Section */}
-      <Section>
-        <h2>Pay Later</h2>
-        <Card>
-          <div>
-            <h4>Pay at drop</h4>
-            <p>Go cashless, after ride pay by scanning QR code</p>
-          </div>
-        </Card>
-       
-      </Section>
-
-      <Divider />
-
-      {/* Others Section */}
-      <OthersSection>
-        <h2>Others</h2>
-        <div>
-          <h4>Cash</h4>
-          <p>You can pay via cash or UPI for your ride</p>
-        </div>
-        <div>
-          <h4>Show Passbook</h4>
-        </div>
-      </OthersSection>
     </Container>
   );
 };

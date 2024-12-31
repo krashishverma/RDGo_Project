@@ -15,7 +15,7 @@ export const Header = styled.header`
   align-items: center;
   justify-content: space-between;
   padding: 1rem;
-  background-color: #0078d7;
+  background-color:rgb(11, 130, 228);
   color: white;
 `;
 
@@ -101,20 +101,38 @@ export const SidebarContent = styled.div`
 // Search section with input field
 export const SearchSection = styled.div`
   display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 1rem;
   background-color: #0078d7;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 `;
 
 // Search bar inside the search section
 export const SearchBar = styled.input`
-  flex: 1;
+   width: 100%;
   padding: 0.5rem;
   font-size: 1rem;
   border: none;
   border-radius: 4px;
+  margin-bottom: 10px;
 
   &::placeholder {
     color: #aaa;
+  }
+
+  @media (min-width: 768px) {
+    width: auto;
+    flex: 1;
+    margin-bottom: 0;
+    margin-right: 10px;
   }
 `;
 
